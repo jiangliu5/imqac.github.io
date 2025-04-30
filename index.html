@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VCIP 2025 Grand Challenge on IMQA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #003366;
+      text-align: center;
+    }
+
+    .organizer {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .organizer img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .info {
+      flex: 1;
+    }
+
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      overflow-x: auto;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+
+    <h1>Image Manipulation Quality Assessment Challenge</h1>
+    <h1>VCIP 2025 </h1>
+
+<!--    <h2>Organizers</h2>-->
+
+<!--    <div class="organizer">-->
+<!--      <img src="images/hantao_liu.jpg" alt="Hantao Liu">-->
+<!--      <div class="info">-->
+<!--        <strong>Hantao Liu</strong> (<a href="mailto:liuh35@cardiff.ac.uk">liuh35@cardiff.ac.uk</a>)<br>-->
+<!--        Full Professor at Cardiff University, Lead of Human-Centric Machine Vision and Intelligence Group. His research focuses on interactive AI and visual quality. He serves as AE for IEEE TIP and TCSVT.<br>-->
+<!--        <a href="https://profiles.cardiff.ac.uk/staff/liuh35" target="_blank">Homepage</a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    -->
+<!--    <div class="organizer">-->
+<!--      <img src="images/paul_rosin.jpg" alt="Paul L. Rosin">-->
+<!--      <div class="info">-->
+<!--        <strong>Paul L. Rosin</strong> (<a href="mailto:RosinPL@cardiff.ac.uk">RosinPL@cardiff.ac.uk</a>)<br>-->
+<!--        Professor at Cardiff University with 40 years of experience in computer vision. Works on low-level image processing, facial analysis, medical imaging, and multidisciplinary research.<br>-->
+<!--        <a href="https://users.cs.cf.ac.uk/Paul.Rosin/" target="_blank">Homepage</a>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+
+    <h2>Introduction</h2>
+    <p style="text-align: justify;">With the rapid growth of image sharing on social media platforms, filter-altered images have become a dominant form of visual communication. Unlike traditional distortions such as noise or compression, filter-based manipulations are often used for aesthetic enhancement, and their impact on perceived image quality is highly subjective, non-monotonic, and content-dependent. This presents new challenges for computational image quality assessment (IQA), which conventional models are not well equipped to handle.</p>
+    <p style="text-align: justify;">This proposed competition invites participants to benchmark their models on our publicly available IMQA dataset. The competition aims to foster innovation in both subjective and objective quality assessment techniques tailored to manipulation-based image changes. It also encourages the exploration of new perceptual metrics and learning-based approaches that go beyond distortion-focused IQA.</p>
+
+
+    <h2>Dataset</h2>
+    <p style="text-align: justify;">The dataset includes 360 images manipulated by various filters and over 7,000 image quality scores provided by 20 human subjects. Our dataset provides a valuable resource for understanding how filters influence perceived image quality and enables the development of IQA models that better align with human preferences in aesthetic-driven scenarios.</p>
+    <p style="text-align: justify;">The dataset, training labels and baseline model can be downloaded <a href="https://drive.google.com/file/d/1d81_Lb7J1fpVU7Jw60cvXYrmYF3Qa8lU/view?usp=drive_link " target="_blank">here</a>. </p>
+    <p style="text-align: justify;">More details about the dataset can be found at <a href="https://ieeexplore.ieee.org/document/10764798" target="_blank">our paper</a>.
+
+
+    <h2>Submission Instructions</h2>
+    <pre>
+  output.csv format:
+  image_name	mos
+  Act2_clahe_1	0.372379619
+  Act4_toning_2	0.705094234
+  Act5_toning_1	0.375190078
+  Act6_clahe_2	0.511680965
+  Ani1_clahe_1	0.479970751
+  Ani1_toning_2	0.303433496
+  Ani2_toning_2	0.671735144
+  Ani4_pr_1	0.458737355
+  Fo2_clahe_1	0.677228593
+    </pre>
+
+    <h2>Evaluation Criteria</h2>
+    <ul>
+      <li><strong>PLCC</strong> – Accuracy via linear correlation with subjective scores</li>
+      <li><strong>SROCC</strong> – Monotonicity between predicted and subjective scores</li>
+    </ul>
+
+    <h2>Timeline</h2>
+    <ul>
+      <li>2025.04.20 – Release of training & validation data</li>
+      <li>2025.05.25 – Final test data release</li>
+      <li>2025.06.04 – Results submission deadline</li>
+      <li>2025.06.05 – Code submission deadline</li>
+      <li>2025.06.15 – Winner announcement</li>
+      <li>2025.06.30 – Challenge paper submission deadline</li>
+    </ul>
+
+    <h2>Organization Team</h2>
+
+    <!-- Team avatars in a grid -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+      <div style="text-align: center;">
+        <img src="images/Paul.jpg" alt="Paul L. Rosin" style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
+        <div>Paul L. Rosin</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="images/hantao.jpg" alt="Hantao Liu" style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
+        <div>Hantao Liu</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="images/jiangliu.jpg" alt="Jiang Liu" style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
+        <div>Jiang Liu</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="images/Yuanbang.png" alt="Yuanbang Liang" style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
+        <div>Yuanbang Liang</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="images/Yixiao Li.png" alt="Yixiao Li" style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
+        <div>Yixiao Li</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="images/yueran_ma.jpg" alt="Yueran Ma" style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
+        <div>Yueran Ma</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="images/xinbo.jpg" alt="Xinbo Wu" style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
+        <div>Xinbo Wu</div>
+      </div>
+    </div>
+
+    <h2>Contact</h2>
+    <p>liuj137@cardiff.ac.uk; liangy32@cardiff.ac.uk</p>
+
+
+  </div>
+</body>
+</html>
